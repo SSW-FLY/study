@@ -7,7 +7,6 @@ package com.example.spock.utlis;
 public class TestUtils {
 
     public static String SpockTest() {
-        System.out.println("I am test");
         return "ok";
     }
 }

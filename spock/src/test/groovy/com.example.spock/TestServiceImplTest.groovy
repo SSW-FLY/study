@@ -3,6 +3,7 @@ package com.example.spock
 import com.example.spock.dao.StudentDao
 import com.example.spock.domain.Student
 import com.example.spock.service.impl.TestServiceImpl
+import com.example.spock.utlis.TestUtils
 import spock.lang.Specification
 
 /**
@@ -38,6 +39,22 @@ class TestServiceImplTest extends Specification {
             test1.get(0).name == "yc1"
             test1.get(1).id == 2
             test1.get(1).name == "yc2"
+        }
+
+    }
+
+
+    def "test static"() {
+        given:
+        def mockClass = Mock(TestUtils)
+        mockClass.SpockTest() >> "ooo"
+
+        when:
+        def res = mockClass.SpockTest()
+
+        then: "结果验证："
+        with(res) {
+            res.equals("ooo")
         }
 
     }
