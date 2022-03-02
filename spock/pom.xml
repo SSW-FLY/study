@@ -15,7 +15,7 @@
     <name>spock</name>
     <description>spock</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
