@@ -22,5 +22,3 @@
    String 常量池在方法区(元数据区)
    详细解析：https://segmentfault.com/a/1190000009888357/
    https://blog.csdn.net/weixin_40304387/article/details/81071816
-10. 反射
-11. 异常

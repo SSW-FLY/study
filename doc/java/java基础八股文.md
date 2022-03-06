@@ -31,8 +31,21 @@
    String不可被继承，不可被修改。String对象是常量，新建完成后就不可被修改，对String对象的修改基本都是新建一个新的对象通过操作后，将新对象的引用复制给之前的引用变量  
    StringBuilder是常量，可以通过方法来修改，StringBuffer和StringBuilder类似，但是StringBuilder是线程不安全的，StringBuffer是线程安全的
 8. Java异常  
-   可检查异常:  
-   不可检查异常:
+   可检查异常:  编译器要求你必须处理的异常，除了RuntimeException和其子类，其他的基本都是检查异常。  
+   不可检查异常: 编译器不要求强制处理的异常，虽然有可能错误，但不会在编译的时候检查。
 9. 序列化和反序列化
-    1. 序列化:
-    2. 反序列化:
+    1. 序列化: 把java对象转化为字节序列的过程。在保存和传递对象时，保证对象的完整性和可传递性。
+    2. 反序列化: 把字节序列恢复为java对象的过程.根据字节流中保存的对象状态及描述信息，通过反序列化重建对象
+10. 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同  
+    HashSet底层是HashMap,LinkedHashSet底层是LinkedHashMap，TreeSet底层是TreeMap  
+    TreeSet中是不能有相同元素的，不可以有null值，根据元素的自然順序排序,TreeSet的排序其實是根據K實現的Comparable接口来判断的，具体的排序参考TreeMap
+11. HashMap 多线程操作导致死循环问题。HashMap死循环问题已经在Jdk1.8版本被修复  
+    HashMap线程不安全，Hashtable是线程安全的，Hashtable实在所有的方法上都加上synchronized，线程安全，但是效率低。  
+    多线程情况下使用CurrentHashMap
+12. HashMap的长度为什么是2的幂次  
+    HashMap中先是数组，数组后面是链表。将数据放到对应的数组及其链接的链表中，先是对数据的key做hash，再用hash对数组长度取模，取模的效率比较低，位运算比较高，jdk做了优化，用位运算代替取模  
+    只有在HashMap的数组length的长度是2的n次方的时候，才有会hash%length==hash&(length-1)
+13. HashMap、HashTable、以及 ConcurrentHashMap 的区别。   
+    这个细节分析在java集合，这个是超高频题目，当面试官问到这个问题的时候，展现你背面试八股文能力的机会来了。你可以展开去讲在 Java7 和 Java8 中 HashMap 分别采用什么数据结构，为什么 Java8
+    把之前的头插法改成了尾插法，怎样实现扩容，为什么负载因子是 0.75，为什么要用红黑树等等一系列的东西。只要面试官不打断我，我在这个知识点上能背到面试官下班。
+14. 
