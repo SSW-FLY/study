@@ -11,18 +11,20 @@ import org.springframework.stereotype.Service;
  * @author imp
  * @date 2022/2/28
  */
-@Service
 public class TestServiceImpl implements TestService {
-
-    @Resource
-    private StudentDao studentDao;
 
     @Override
     public Student findOne() {
-        return studentDao.findOne();
+        System.out.println("find one");
+        return new Student();
     }
-
-    public List<Student> findList() {
-        return studentDao.findList();
+//
+//    public List<Student> findList() {
+//        return null;
+//    }
+//
+//
+    public String findOk() {
+        return "ok";
     }
 }
