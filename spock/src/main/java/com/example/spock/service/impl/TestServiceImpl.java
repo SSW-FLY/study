@@ -18,7 +18,8 @@ public class TestServiceImpl implements TestService {
         System.out.println("find one");
         return new Student();
     }
-//
+
+    //
 //    public List<Student> findList() {
 //        return null;
 //    }
@@ -26,5 +27,9 @@ public class TestServiceImpl implements TestService {
 //
     public String findOk() {
         return "ok";
+    }
+
+    public final String findFinal() {
+        return "final";
     }
 }
